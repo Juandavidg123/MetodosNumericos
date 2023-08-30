@@ -1,17 +1,17 @@
 # MetodosNumericos
 Métodos de resolución de ecuaciones no lineales con gráfica en Python
 
-Métodos a usar
+# Métodos a usar
 
-Se realiza el uso de:
-- Bisección
-- Newton - Raphson
-- Secante
-- Punto fijo
+  Se realiza el uso de:
+  - Bisección
+  - Newton - Raphson
+  - Secante
+  - Punto fijo
 
-Librerías
+# Librerías
 
-Se requiere tener las siguientes lirerías instaladas:
-- numpy
-- sympy
-- matplotlib
+  Se requiere tener las siguientes lirerías instaladas:
+  - numpy
+  - sympy
+  - matplotlib
