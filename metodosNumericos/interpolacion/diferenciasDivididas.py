@@ -1,3 +1,5 @@
+import sympy as sp
+
 def diferenciasDivididas(x,y):
     n = len(x)
     difdiv = [y.copy()]
@@ -7,7 +9,30 @@ def diferenciasDivididas(x,y):
             coeficiente = (difdiv[i-1][j+1] - difdiv[i-1][j])/(x[j+i]-x[j])
             coeficientes.append(coeficiente)
         difdiv.append(coeficientes)
+
     return difdiv
+
+def polinomioProgresivo(difdiv, arr):
+    x = sp.symbols('x')
+    polinomio = difdiv[0][0]
+    for i in range(1,len(difdiv)):
+        a = difdiv[i][0]
+        for j in range(i):
+            a *= (x - arr[j])
+        polinomio += a
+    print(f"Polinomio progresivo sin simplificar: {polinomio}\n")
+    return sp.simplify(polinomio)
+
+def polinomioRegresivo(difdiv, arr):
+    x = sp.symbols('x')
+    polinomio = difdiv[0][-1]
+    for i in range(1,len(difdiv)):
+        a = difdiv[i][-1]
+        for j in range(i):
+            a *= (x - arr[len(difdiv)-1-j])
+        polinomio += a
+    print(f"Polinomio regresivo sin simplificar: {polinomio}\n")
+    return sp.simplify(polinomio)
 
 def main():
     n = int(input("Ingrese el numero de iteraciones: "))
@@ -30,6 +55,12 @@ def main():
     for i, coef in enumerate(coeficientes):
         print(f'Diferencia dividida de orden {i+1}: {coef}')
 
+    print("\n")
+    polpro = polinomioProgresivo(coeficientes, x)
+    print(f"Polinomio progresivo: {polpro}\n")
+
+    polreg = polinomioRegresivo(coeficientes, x)
+    print(f"Polinomio regresivo: {polreg}\n")
 
 if __name__ == "__main__":
     main()
