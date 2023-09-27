@@ -6,7 +6,7 @@ body {
 
 header {
     background-color: #333;
-    color: #fff;
+    color: #ffffff;
     text-align: center;
     padding: 50px 0;
 }
@@ -29,9 +29,17 @@ header {
     margin: 0 10px;
 }
 
-.social-icons a {
-    text-decoration: none;
-    margin: 0 10px;
+.poli {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 40px;
+    margin-left: 100px;
+}
+
+.poli img{
+    width: 150px;
+    height: auto;
 }
 
 .decorative-border {
@@ -63,13 +71,13 @@ body {
     background-color: #fdde89;
 }
 
-#information, #likes {
+#ecuaciones, #likes {
     background-color: #f5f5f5;
     padding: 20px;
     border-radius: 10px;
 }
 
-#information p, #likes ul {
+#ecuaciones p, #likes ul {
     font-size: 18px;
     line-height: 1.5;
 }
@@ -83,12 +91,12 @@ body {
     margin-bottom: 10px;
 }
 
-#information, #likes {
+#ecuaciones, #likes {
     border: 1px solid #ddd;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-#information h2, #likes h2 {
+#ecuaciones h2, #likes h2 {
     font-size: 24px;
     margin-bottom: 10px;
 }
@@ -101,7 +109,7 @@ body {
 #about {
     position: relative;
     text-align: center;
-    color: #fff;
+    color: #000000;
     padding: 100px 0;
 }
 
