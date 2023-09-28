@@ -71,32 +71,32 @@ body {
     background-color: #fdde89;
 }
 
-#ecuaciones, #likes {
+#ecuaciones, #interpolacion {
     background-color: #f5f5f5;
     padding: 20px;
     border-radius: 10px;
 }
 
-#ecuaciones p, #likes ul {
+#ecuaciones p, #interpolacion ul {
     font-size: 18px;
     line-height: 1.5;
 }
 
-#likes ul {
+#interpolacion ul {
     list-style-type: disc;
     padding-left: 20px;
 }
 
-#likes li {
+#interpolacion li {
     margin-bottom: 10px;
 }
 
-#ecuaciones, #likes {
+#ecuaciones, #interpolacion {
     border: 1px solid #ddd;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-#ecuaciones h2, #likes h2 {
+#ecuaciones h2, #interpolacion h2 {
     font-size: 24px;
     margin-bottom: 10px;
 }

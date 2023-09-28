@@ -1,7 +1,11 @@
 # MetodosNumericos
-Métodos de resolución de ecuaciones no lineales con gráfica en Python
+  Los métodos numéricos son técnicas y algoritmos matemáticos que se utilizan para resolver problemas matemáticos y
+  científicos mediante aproximaciones numéricas. Estos métodos son especialmente útiles cuando no es posible encontrar
+  soluciones exactas o cuando las soluciones exactas son difíciles de calcular de manera práctica. Los métodos numéricos
+  se aplican en una amplia variedad de campos, incluyendo la física, la ingeniería, la economía, la estadística y muchas
+  otras disciplinas científicas y técnicas.
 
-# Métodos a usar
+# Métodos de resolución de ecuaciones no Líneales
 
   Se realiza el uso de:
   - Bisección
@@ -9,9 +13,5 @@ Métodos de resolución de ecuaciones no lineales con gráfica en Python
   - Secante
   - Punto fijo
 
-# Librerías
+# Interpolación
 
-  Se requiere tener las siguientes lirerías instaladas:
-  - numpy
-  - sympy
-  - matplotlib
