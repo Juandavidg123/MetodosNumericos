@@ -77,18 +77,9 @@ body {
     border-radius: 10px;
 }
 
-#ecuaciones p, #interpolacion ul {
+#ecuaciones p, #interpolacion p{
     font-size: 18px;
     line-height: 1.5;
-}
-
-#interpolacion ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-#interpolacion li {
-    margin-bottom: 10px;
 }
 
 #ecuaciones, #interpolacion {
@@ -145,41 +136,4 @@ body {
 
 .project img:hover {
     transform: scale(1.05);
-}
-
-#school {
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-#school h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-#school p {
-    font-size: 18px;
-    line-height: 1.5;
-    color: #555;
-}
-#university {
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-#university h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-#university p {
-    font-size: 18px;
-    line-height: 1.5;
-    color: #555;
 }
