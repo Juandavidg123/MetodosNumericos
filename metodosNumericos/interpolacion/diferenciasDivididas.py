@@ -62,5 +62,13 @@ def main():
     polreg = polinomioRegresivo(coeficientes, x)
     print(f"Polinomio regresivo: {polreg}\n")
 
+    xpp = float(input("Ingrese un número x para evaluarlo en la función progresiva: "))
+
+    xpr = float(input("\nIngrese un número x para evaluarlo en la función regresiva: "))
+
+
+    print(f'\nPolinomio progresivo evaluado con un x = {xpp}: {polpro.subs("x",xpp)}\n')
+    print(f'Polinomio regresivo evaluado con un x = {xpr}: {polpro.subs("x",xpr)}\n')
+
 if __name__ == "__main__":
     main()

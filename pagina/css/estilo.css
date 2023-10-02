@@ -29,6 +29,11 @@ header {
     margin: 0 10px;
 }
 
+.social-icons img {
+    width: 30px;
+    height: auto;
+}
+
 .poli {
     position: absolute;
     top: 0;
@@ -71,8 +76,14 @@ body {
     background-color: #fdde89;
 }
 
-#ecuaciones, #interpolacion {
-    background-color: #f5f5f5;
+#ecuaciones{
+    background-color: #ffcd9a;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#interpolacion {
+    background-color: #fdde89;
     padding: 20px;
     border-radius: 10px;
 }
@@ -83,7 +94,7 @@ body {
 }
 
 #ecuaciones, #interpolacion {
-    border: 1px solid #ddd;
+    border: 7px solid #ffffff;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -92,10 +103,6 @@ body {
     margin-bottom: 10px;
 }
 
-.social-icons img {
-    width: 30px;
-    height: auto;
-}
 
 #about {
     position: relative;
@@ -111,29 +118,4 @@ body {
 
 .about-content p {
     font-size: 18px;
-}
-
-#projects {
-    text-align: center;
-    padding: 50px 0;
-}
-
-#projects h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.project {
-    margin: 20px;
-}
-
-.project img {
-    max-width: 100%;
-    border: 2px solid #333;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.project img:hover {
-    transform: scale(1.05);
 }
