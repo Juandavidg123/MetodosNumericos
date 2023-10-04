@@ -1,4 +1,6 @@
 import sympy as sp
+import matplotlib.pyplot as plt
+import numpy as np
 
 def diferenciasDivididas(x,y):
     n = len(x)
@@ -33,6 +35,25 @@ def polinomioRegresivo(difdiv, arr):
         polinomio += a
     print(f"Polinomio regresivo sin simplificar: {polinomio}\n")
     return sp.simplify(polinomio)
+
+def grafica(pol, x, y, z):
+    xSym = 'x'
+    graphX = np.linspace(y[0]-3,y[len(x)-1]-3,100)
+    ecuacion_num = sp.lambdify(xSym, pol, 'numpy')
+    graphY = ecuacion_num(graphX)
+    
+    plt.plot(graphX,graphY, label='Curva')
+
+    for i in range (0,len(x)):
+        plt.scatter(x[i],y[i],color='red',label=f'Punto({x[i]},{y[i]})')
+    plt.scatter(z,pol.subs(xSym, z),color='yellow', label=f'P({z},{pol.subs(xSym, z)})')
+    plt.grid(True)
+    plt.axhline(y=0, color='gray', linestyle='--', label='y = 0')
+    plt.legend()
+
+    plt.show()
+    
+    return
 
 def main():
     n = int(input("Ingrese el numero de iteraciones: "))
@@ -69,6 +90,8 @@ def main():
 
     print(f'\nPolinomio progresivo evaluado con un x = {xpp}: {polpro.subs("x",xpp)}\n')
     print(f'Polinomio regresivo evaluado con un x = {xpr}: {polpro.subs("x",xpr)}\n')
+
+    grafica(polpro,x,y,xpp)
 
 if __name__ == "__main__":
     main()

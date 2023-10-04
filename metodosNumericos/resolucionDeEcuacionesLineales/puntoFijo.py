@@ -56,6 +56,7 @@ def puntoFijo(despeje, ecuacionX):
     plt.grid(True)
     plt.axhline(y=0, color='gray', linestyle='--', label='y = 0')
     plt.title("g(x): violeta; f(x): blue")
+    plt.legend()
     plt.show()
     return
 

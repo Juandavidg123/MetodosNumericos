@@ -60,7 +60,7 @@ def solucion():
         plt.scatter(x,0,color='red')
         plt.grid(True)
         plt.axhline(y=0, color='gray', linestyle='--', label='y = 0')
-        
+        plt.legend()
         plt.show()
         return x
 
