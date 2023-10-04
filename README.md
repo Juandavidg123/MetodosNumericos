@@ -14,4 +14,6 @@
   - Punto fijo
 
 # Interpolación
-
+  Se realiza el uso de:
+  - Diferencias divididas
+  - Lagrangre
