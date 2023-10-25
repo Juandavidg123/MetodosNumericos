@@ -118,10 +118,11 @@ body {
 
 
 #about {
-    position: relative;
-    text-align: center;
-    color: #000000;
+    background-color: #fdde89;
+    padding: 20px;
+    border-radius: 10px;
     padding: 100px 0;
+    margin-left: 20px;
 }
 
 .about-content h2 {
