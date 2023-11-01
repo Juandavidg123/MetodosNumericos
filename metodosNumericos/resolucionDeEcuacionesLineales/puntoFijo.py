@@ -58,6 +58,7 @@ def puntoFijo(despeje, ecuacionX):
     plt.title("g(x): violeta; f(x): blue")
     plt.legend()
     plt.show()
+    print("Solución evaluada en la función: ", ecuacionX.subs(xSym,x))
     return
 
 def criterio(despeje):

@@ -40,6 +40,7 @@ def solucion():
     plt.axhline(y=0, color='gray', linestyle='--', label='y = 0')
     plt.legend()
     plt.show()
+    print("Solución evaluada en la función: ", ecuacion.subs(xSym, x1))
     return x1
 
 def main():
