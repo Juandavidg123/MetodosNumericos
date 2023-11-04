@@ -36,23 +36,21 @@ def edo(ecuacionInput, xci, yci, pasos, h):
 
     return [yReal, sol, c[0]]
 
-def grafica(ecuacion, c, h, yAprox, yReal):
+def grafica(ecuacion, c, h, yAprox, yReal, rangoA):
     xSym = sp.symbols('x')
-    ySym = sp.Function('y')(xSym)
+    c1 = sp.symbols("C1")
 
-    xNum = h
-    xVal = []
-
-    for i in range(len(yAprox)):
-        xVal.append(xNum)
-        xNum += h
-
-    xNum = h
+    pasos = rangoA
+    
     for i in range (len(yAprox)):
-        plt.scatter(xNum,yAprox[i],color='red')
-        xNum += h
+        plt.scatter(pasos,yAprox[i],color='red')
+        pasos += h
 
-    plt.plot(xVal, yReal[0], label='Solución Real', color='blue')
+    yGraph = sp.lambdify(xSym, yReal[1].rhs.subs({c1: yReal[2]}), "numpy")
+    xNum = np.linspace(rangoA, pasos, 100)
+    yEcuacion = yGraph(xNum)
+
+    plt.plot(xNum, yEcuacion, color='blue', label='Solución exacta')
     plt.grid(True)
     plt.axhline(y=0, color='gray', linestyle='--', label='y = 0')
     plt.xlabel('x')
@@ -82,9 +80,9 @@ def main():
     yReal = edo(ecuacionInput, xCon, yCon, pasos, h)
 
     for i in range(len(yAprox)):
-        print(f"I: {i} Xi: {rangoA + i*h} yAprox: {yAprox[i]} Real: {yReal[0][i]} Er: {abs((yReal[0][i] - yAprox[i])/yReal[0][i])}")
+        print(f"I: {i} Xi: {rangoA + i*h:.6f} yAprox: {yAprox[i]:.6f} Real: {yReal[0][i]:.6f} Er: {abs((yReal[0][i] - yAprox[i])/yReal[0][i]):.6f}")
 
-    grafica(yReal[1], yReal[2], h, yAprox, yReal)
+    grafica(yReal[1], yReal[2], h, yAprox, yReal, rangoA)
 
 if __name__ == "__main__":
     main()
