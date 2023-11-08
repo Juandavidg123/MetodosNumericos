@@ -2,12 +2,26 @@ import sympy as sp
 import numpy as np
 import matplotlib.pyplot as plt
 
-def solucion(ecuacion, rangoA, pasos, yci, h):
+
+
+def taylor(ecuacion, pasos, h, yci, xci, grado,rangoA):
+    
     x = sp.symbols('x')
     y = sp.Function('y')(x)
-    yAprox = [yci]
+
+    polinomioTaylor = ecuacion
+    ecuacionDerivada = sp.diff(ecuacion, x)
+    
+    if (grado > 1):
+        for i in range(2, grado + 1):
+            polinomioTaylor = polinomioTaylor + ((ecuacionDerivada.subs(sp.Derivative(y, x), ecuacion) * h**(i-1))/sp.factorial(i))
+            reemplazo = ecuacionDerivada.subs(sp.Derivative(y, x), ecuacion)
+            ecuacionDerivada = sp.diff(reemplazo, x)
+    
+    yAprox = []
+    yAprox.append(yci)
     for i in range(pasos):
-        yNum = yci + h * ecuacion.subs({x: rangoA +  i*h, y: yci})
+        yNum = yci + h * polinomioTaylor.subs({x: rangoA +  i*h, y: yci})
         yAprox.append(yNum)
         yci = yNum
 
@@ -36,7 +50,7 @@ def edo(ecuacionInput, xci, yci, pasos, h):
 
     return [yReal, sol, c[0]]
 
-def grafica(h, yAprox, yReal, rangoA):
+def grafica(ecuacion, h, yAprox, yReal, rangoA):
     xSym = sp.symbols('x')
     c1 = sp.symbols("C1")
 
@@ -57,9 +71,9 @@ def grafica(h, yAprox, yReal, rangoA):
     plt.ylabel('y')
     plt.show()
 
-
 def main():
-    ecuacionInput = input("Ingrese su ecuacion en términos de 'x' y 'y': ")
+
+    ecuacionInput = input("Ingrese la ecuacion en término de 'x' y 'y': ")
     ecuacion = sp.sympify(ecuacionInput)
 
     rangos = input("Ingrese el rango de valores de menor a mayor: ")
@@ -75,13 +89,18 @@ def main():
     xCon = float(condicionInicial[0])
     yCon = float(condicionInicial[1])
 
-    yAprox = solucion(ecuacion, rangoA, pasos, yCon, h)
+    grado = int(input("Ingrese el grado del polinomio de Taylor: "))
+
+    yAprox = taylor(ecuacion, pasos, h, yCon, xCon, grado, rangoA)
     yReal = edo(ecuacionInput, xCon, yCon, pasos, h)
 
     for i in range(len(yAprox)):
         print(f"I: {i} Xi: {rangoA + i*h:.6f} yAprox: {yAprox[i]:.6f} Real: {yReal[0][i]:.6f} Er: {abs((yReal[0][i] - yAprox[i])/yReal[0][i]):.6f}")
 
-    grafica(h, yAprox, yReal, rangoA)
+    grafica(yReal[1], h, yAprox, yReal, rangoA)
+    
+    return
+
 
 if __name__ == "__main__":
     main()
