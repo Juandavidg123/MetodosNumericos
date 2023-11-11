@@ -17,3 +17,8 @@
   Se realiza el uso de:
   - Diferencias divididas
   - Lagrangre
+
+# Ecuaciones diferenciales
+  Para resolver y obtener soluciones aproximadas de ecuaciones diferenciales se realiza el uso de:
+  - Euler
+  - Taylor

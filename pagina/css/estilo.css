@@ -101,17 +101,23 @@ body {
     border-radius: 10px;
 }
 
-#ecuaciones p, #interpolacion p{
+#diferenciales {
+    background-color: #ffcd9a;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#ecuaciones p, #interpolacion p, #diferenciales p{
     font-size: 18px;
     line-height: 1.5;
 }
 
-#ecuaciones, #interpolacion {
+#ecuaciones, #interpolacion, #diferenciales {
     border: 7px solid #ffffff;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-#ecuaciones h2, #interpolacion h2 {
+#ecuaciones h2, #interpolacion h2, #diferenciales h2 {
     font-size: 24px;
     margin-bottom: 10px;
 }
