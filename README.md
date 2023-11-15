@@ -22,3 +22,4 @@
   Para resolver y obtener soluciones aproximadas de ecuaciones diferenciales se realiza el uso de:
   - Euler
   - Taylor
+  - Runge-Kutta orden 4
