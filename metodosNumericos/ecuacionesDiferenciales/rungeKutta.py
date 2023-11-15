@@ -2,7 +2,7 @@ import sympy as sp
 import numpy as np
 import matplotlib.pyplot as plt
 
-def solucion(ecuacion, rangoA, pasos, yci, h):
+def rk4(ecuacion, rangoA, pasos, yci, h):
     x = sp.symbols('x')
     y = sp.Function('y')(x)
     yAprox = [yci]
@@ -80,7 +80,7 @@ def main():
     xCon = float(condicionInicial[0])
     yCon = float(condicionInicial[1])
 
-    yAprox = solucion(ecuacion, rangoA, pasos, yCon, h)
+    yAprox = rk4(ecuacion, rangoA, pasos, yCon, h)
     yReal = edo(ecuacionInput, xCon, yCon, pasos, h)
 
     for i in range(len(yAprox)):
